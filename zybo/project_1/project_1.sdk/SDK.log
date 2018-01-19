@@ -1,0 +1,37 @@
+12:17:28 INFO  : Launching XSDB server: xsdb -n -interactive /user/5/.base/ruffiotm/home/Documents/3A/TLM/cours-tlm/TPs/squelette/tp3/zybo/project_1/project_1.sdk/temp_xsdb_launch_script.tcl
+12:17:29 INFO  : XSDB server has started successfully.
+12:17:30 INFO  : Processing command line option -hwspec /user/5/.base/ruffiotm/home/Documents/3A/TLM/cours-tlm/TPs/squelette/tp3/zybo/project_1/project_1.sdk/design_1_wrapper.hdf.
+12:21:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:21:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279573046A" && level==0} -index 1' command is executed.
+12:21:41 INFO  : FPGA configured successfully with bitstream "/user/5/.base/ruffiotm/home/Documents/3A/TLM/cours-tlm/TPs/squelette/tp3/zybo/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/download.bit"
+12:22:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279573046A" && level==0} -index 1' command is executed.
+12:22:56 INFO  : 'fpga -state' command is executed.
+12:22:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:22:57 INFO  : Jtag cable 'Digilent Zybo 210279573046A' is selected.
+12:22:57 INFO  : 'jtag frequency' command is executed.
+12:22:57 INFO  : Context for processor 'microblaze_0' is selected.
+12:22:57 INFO  : Hardware design information is loaded from '/user/5/.base/ruffiotm/home/Documents/3A/TLM/cours-tlm/TPs/squelette/tp3/zybo/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+12:22:57 INFO  : Context for processor 'microblaze_0' is selected.
+12:22:57 INFO  : Processor reset is completed for 'microblaze_0'.
+12:22:57 INFO  : Context for processor 'microblaze_0' is selected.
+12:22:57 INFO  : The application '/user/5/.base/ruffiotm/home/Documents/3A/TLM/cours-tlm/TPs/squelette/tp3/zybo/project_1/project_1.sdk/game-of-life/Debug/game-of-life.elf' is downloaded to processor 'microblaze_0'.
+12:22:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Zybo 210279573046A"} -index 1
+loadhw /user/5/.base/ruffiotm/home/Documents/3A/TLM/cours-tlm/TPs/squelette/tp3/zybo/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Zybo 210279573046A"} -index 1
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Zybo 210279573046A"} -index 1
+dow /user/5/.base/ruffiotm/home/Documents/3A/TLM/cours-tlm/TPs/squelette/tp3/zybo/project_1/project_1.sdk/game-of-life/Debug/game-of-life.elf
+----------------End of Script----------------
+
+12:22:57 INFO  : Memory regions updated for context MicroBlaze #0
+12:22:57 INFO  : Context for processor 'microblaze_0' is selected.
+12:22:57 INFO  : 'con' command is executed.
+12:22:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Zybo 210279573046A"} -index 1
+con
+----------------End of Script----------------
+
+12:22:58 INFO  : Launch script is exported to file '/user/5/.base/ruffiotm/home/Documents/3A/TLM/cours-tlm/TPs/squelette/tp3/zybo/project_1/project_1.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_on_local_game-of-life.elf.tcl'
+12:36:37 INFO  : Disconnected from the channel tcfchan#1.
